@@ -1,0 +1,323 @@
+/* =====================================================
+   PART A — CSS FUNDAMENTALS
+   Reset, layout, comments, units, and cascade
+   ===================================================== */
+
+
+/* Universal selector: reset margin and padding.
+   border-box includes padding and border in the width. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body styling using px, rem, and HEX colors */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #eef2ff;
+    padding: 20px;
+}
+
+
+/* Grouping selector */
+h1,
+h2 {
+    font-family: Georgia, serif;
+}
+
+
+/* Header styling */
+header {
+    background-color: navy;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+
+/* Main content spacing */
+main {
+    padding-top: 25px;
+}
+
+
+/* Footer styling with RGB color */
+footer {
+    background-color: #1e293b;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+/* =====================================================
+   PART B — SELECTORS, PROPERTIES, AND VALUES
+   ===================================================== */
+
+
+/* Type selector */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* Type selector */
+h2 {
+    color: #1d4ed8;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+/* Class selector: card box model */
+.card {
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
+    border: 3px solid #2563eb;
+    border-radius: 12px;
+    background-color: white;
+    margin: 0 auto 20px auto;
+}
+
+
+/* Class selector: introduction paragraph */
+.intro {
+    color: #2563eb;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+/* ID selector: distinguish the About card */
+#about {
+    border-color: green;
+}
+
+
+/* Descendant combinator: paragraphs inside cards */
+.card p {
+    margin-bottom: 10px;
+}
+
+
+/* Child combinator: direct list items */
+.skills-list > li {
+    padding: 8px;
+    background-color: #dbeafe;
+    border-radius: 6px;
+}
+
+
+/* Pseudo-class: hover effect on navigation links */
+nav a:hover {
+    background-color: #facc15;
+    color: black;
+}
+
+
+/* Pseudo-element: style the first letter of the intro */
+.intro::first-letter {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/* Color formats used:
+   Named color: navy
+   HEX color: #2563eb
+   RGB color: rgb(255, 255, 255)
+*/
+
+
+/* =====================================================
+   CASCADE EXAMPLE
+   ===================================================== */
+
+
+/* First rule: paragraphs inside About become purple */
+#about p {
+    color: purple;
+}
+
+
+/* Second rule: intro paragraph becomes red */
+#about .intro {
+    color: red;
+}
+
+
+/*
+CASCADE EXPLANATION:
+
+The #about .intro rule wins because it has greater
+specificity than #about p. Both selectors contain one ID,
+but #about .intro also contains a class selector.
+Therefore, the intro paragraph appears red.
+*/
+
+
+/* =====================================================
+   PART C — BOX MODEL AND BASIC LAYOUT
+   ===================================================== */
+
+
+/* Center cards horizontally and space them vertically */
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+
+/* Establish the positioning reference for the badge */
+#about {
+    position: relative;
+}
+
+
+/* PROFILE badge positioned in the top-right corner */
+#about::after {
+    content: "PROFILE";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: orange;
+    color: white;
+
+    padding: 4px 8px;
+    border-radius: 5px;
+
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+
+/*
+TOTAL RENDERED WIDTH OF ONE .card:
+
+With box-sizing: border-box:
+500px total width, including padding and borders.
+
+With content-box:
+500px content
++ 40px horizontal padding
++ 6px horizontal borders
+= 546px total rendered width.
+
+Note: max-width: 100% prevents the card from overflowing
+its parent on narrower screens.
+*/
+
+
+/* =====================================================
+   PART D — DISPLAY AND VISIBILITY
+   ===================================================== */
+
+
+/* Navigation links use inline-block */
+nav a {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+
+    background-color: #3b82f6;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+
+/* Flexbox: arrange skill items in a centered row */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    list-style: none;
+}
+
+
+/* Style each skill as a tag */
+.skills-list li {
+    background-color: #bfdbfe;
+    color: #1e3a8a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+/* display: none removes the paragraph and its space */
+.hide-none {
+    display: none;
+}
+
+
+/* visibility: hidden hides the paragraph but keeps its space */
+.hide-visibility {
+    visibility: hidden;
+}
+
+
+/*
+VISIBLE DIFFERENCE BETWEEN THE TWO HIDDEN PARAGRAPHS:
+
+display: none completely removes the paragraph from the
+page layout, so it leaves no empty space.
+
+visibility: hidden makes the paragraph invisible, but its
+original space remains in the layout.
+*/
+
+
+/* Fixed height with a scrollbar when content overflows */
+.scroll-box {
+    height: 120px;
+    overflow: auto;
+}
+
+
+/* =====================================================
+   REFLECTION QUESTIONS
+   ===================================================== */
+
+
+/*
+1. Why did one of the conflicting rules win?
+
+The #about .intro rule wins because it has greater
+specificity than #about p. Both contain an ID selector,
+but #about .intro also contains a class selector.
+*/
+
+
+/*
+2. What is the rendered width if box-sizing is content-box?
+
+The total width would be 546px:
+500px content + 40px horizontal padding + 6px borders.
+This calculation assumes the card has no other width
+constraints and uses the specified padding and borders.
+*/
+
+
+/*
+3. When would you choose visibility: hidden instead of
+   display: none?
+
+I would use visibility: hidden when I want to hide an
+element but preserve its space in the layout. I would use
+display: none when I want to remove both the element and
+its space completely.
+*/
