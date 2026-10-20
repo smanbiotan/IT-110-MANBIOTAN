@@ -10,7 +10,7 @@ const brand = document.querySelector(".brand");
 const contactForm = document.getElementById("contactForm");
 const formStatus = document.getElementById("formStatus");
 
-let likes = 24;
+let likes = 0;
 
 function updateLikeCount() {
     likeCount.textContent = likes;
