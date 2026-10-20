@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusHub | Student Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <a href="#home" class="brand">CampusHub</a>
+
+        <nav class="navigation" aria-label="Main navigation">
+            <a href="#home" class="nav-link active" aria-current="page">Home</a>
+            <a href="#courses" class="nav-link">Courses</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <label class="theme-control" for="darkMode">
+            <span>Dark mode</span>
+            <input type="checkbox" id="darkMode" role="switch">
+            <span class="switch-track" aria-hidden="true">
+                <span class="switch-thumb"></span>
+            </span>
+        </label>
+    </header>
+
+    <main>
+        <section class="profile-card page" id="home">
+            <div class="avatar" aria-hidden="true">SAM</div>
+
+            <h1>Sherwin Alvin Manbiotan</h1>
+            <p class="subtitle">BS Information Technology, 2nd Year</p>
+
+            <ul class="skills" aria-label="Skills">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <div class="card-actions">
+                <button type="button" class="like-button" id="likeBtn">
+                    <span aria-hidden="true">♥</span> Like
+                    <span class="like-count" id="likeCount" aria-live="polite">24</span>
+                </button>
+
+                <button type="button" class="reset-button" id="resetBtn">
+                    Reset
+                </button>
+            </div>
+        </section>
+
+        <section class="profile-card page detail-card" id="courses" hidden>
+            <div class="small-icon" aria-hidden="true"></div>
+            <h1>My Courses</h1>
+            <p class="subtitle">My current courses that I am Studying</p>
+
+            <ul class="course-list">
+                <li>Fundamentals of Programming</li>
+                <li>Introduction of Computer</li>
+                <li>Object-Oriented Programming</li>
+                <li>Data Structures and Algorithms</li>
+            </ul>
+
+            <a href="#home" class="back-link">Back to Home</a>
+        </section>
+
+        <section class="profile-card page detail-card" id="contact" hidden>
+            <div class="small-icon" aria-hidden="true">✉</div>
+            <h1>Contact Me</h1>
+            <p class="subtitle">Send me a message</p>
+
+            <form id="contactForm" class="contact-form">
+                <label for="contactName">Your Name</label>
+                <input type="text" id="contactName" placeholder="Enter your name" required>
+
+                <label for="contactMessage">Your Message</label>
+                <textarea id="contactMessage" rows="3" placeholder="Write your message" required></textarea>
+
+                <button type="submit" class="like-button send-button">
+                    Send Message
+                </button>
+
+                <p id="formStatus" role="status"></p>
+            </form>
+
+            <a href="#home" class="back-link">Back to Home</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 CampusHub. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
