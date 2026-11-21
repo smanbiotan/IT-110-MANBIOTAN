@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Piece - HTML Practical Application</title>
+</head>
+
+<body>
+    <h1 id="main-heading">One Piece: The Grand Line</h1>
+
+    <!-- Images -->
+    <section id="images">
+        <h2>Images</h2>
+
+        <p>
+            One Piece follows Monkey D. Luffy and the Straw Hat Pirates on their
+            journey across the Grand Line.
+        </p>
+
+        <figure>
+            <img src="images/luffy.jpg" alt="Monkey D. Luffy wearing his straw hat" width="620" />
+
+            <figcaption>
+                Monkey D. Luffy, captain of the Straw Hat Pirates.
+            </figcaption>
+        </figure>
+
+        <img src="images/zoro.jpg" alt="Roronoa Zoro holding his swords" width="417" />
+
+        <img src="images/nami.jpg" alt="Nami, navigator of the Straw Hat Pirates" width="400" />
+    </section>
+
+    <!-- Hyperlinks -->
+    <section id="hyperlinks">
+        <h2>Hyperlinks</h2>
+
+        <h3>Internal Link</h3>
+        <p>
+            <a href="activity.html#multimedia"> Go to the Multimedia section </a>
+        </p>
+
+        <h3>External Link</h3>
+        <p>
+            <a href="https://one-piece.com/" target="_blank">
+                Visit the Official One Piece Website
+            </a>
+        </p>
+
+        <h3>Email Link</h3>
+        <p>
+            <a href="mailto:onepiecefan@example.com"> Email a One Piece Fan </a>
+        </p>
+
+        <h3>Same-Page Anchor Link</h3>
+        <p>
+            <a href="#html-dom"> Jump to the HTML DOM section </a>
+        </p>
+    </section>
+
+    <!-- Multimedia -->
+    <section id="multimedia">
+        <h2>Multimedia</h2>
+
+        <h3>One Piece Audio</h3>
+
+        <audio controls>
+            <source src="media/one-piece-audio.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+        </audio>
+
+        <h3>One Piece Video</h3>
+
+        <video controls width="650">
+            <source src="media/one-piece-video.mp4" type="video/mp4" />
+            Your browser does not support the video element.
+        </video>
+    </section>
+
+    <!-- Useful Tags -->
+    <section id="useful-tags">
+        <h2>Useful Tags</h2>
+
+        <!-- The <strong> tag is used to emphasize important text. -->
+        <p>
+            <strong>Monkey D. Luffy</strong> is the captain of the Straw Hat
+            Pirates.
+        </p>
+
+        <!-- The <mark> tag is used to highlight important text. -->
+        <p>
+            Luffy's dream is to become the
+            <mark>King of the Pirates</mark>.
+        </p>
+
+        <!-- The <blockquote> tag is used to display a longer quotation. -->
+        <blockquote>
+            The Grand Line is filled with incredible adventures, powerful pirates,
+            and mysterious islands.
+        </blockquote>
+    </section>
+
+    <!-- HTML DOM -->
+    <section id="html-dom">
+        <h2 id="dom-heading">HTML DOM</h2>
+
+        <p id="dom-description">
+            The HTML DOM represents an HTML document as a tree of elements. Each
+            element can have a parent and child elements.
+        </p>
+
+        <div id="dom-example">
+            <h3>One Piece DOM Example</h3>
+
+            <ul>
+                <li>Luffy</li>
+                <li>Zoro</li>
+                <li>Nami</li>
+            </ul>
+        </div>
+
+        <img src="dom-tree.png" alt="Screenshot of the HTML DOM tree showing nested elements" width="650" />
+    </section>
+
+    <footer>
+        <p>&copy; 2026 One Piece HTML Practical Application</p>
+    </footer>
+
+    <!--
+    The body element is the parent of the main sections of the webpage.
+    The section element with the id "images" is the parent of the figure element.
+    The figure element is the parent of the img and figcaption elements.
+    The ul element is the parent of its li elements.
+    -->
+</body>
+
+</html>
